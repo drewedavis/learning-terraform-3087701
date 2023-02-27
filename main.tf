@@ -34,7 +34,7 @@ resource "aws_securiy_group" "blog" {
   description = "Allow http/s in.  Allow everything out"
   
   vpc_id      = data.aws_vpc.default.id   
-  {
+  }
   
   resouce "aws_security_group_rule" "blog_http_in" {
     type        = "ingress"
