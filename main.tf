@@ -23,7 +23,7 @@ resource "aws_instance" "blog" {
   vpc_security_group_ids = [module.blog_sg.security_group_id]
 
   tags = {
-    Name = "HelloWorld"
+    Name = "Modules"
   }
 }
 
@@ -37,10 +37,10 @@ module "blog_sg" {
 
   vpc_id      = data.aws_vpc.default.id
 
-  ingress_rules = ["http-80-tcp",https-443-tcp"]   
+  ingress_rules       = ["http-80-tcp","https-443-tcp"]   
   ingress_cidr_blocks = ["0.0.0.0/0"]
 
-  egress_rules = ["all-all"]   
+  egress_rules       = ["all-all"]   
   egress_cidr_blocks = ["0.0.0.0/0"]
 
 
